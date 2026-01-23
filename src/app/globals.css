@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    overflow-x: hidden;
+    cursor: wait;
+    max-width: 100vw;
+    background-color: white;
+    color: #141516;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+/* Prevent horizontal swiping on iPad and mobile */
+@media (max-width: 1024px) {
+
+    html,
+    body {
+        touch-action: pan-y pinch-zoom;
+        overscroll-behavior-x: none;
+        overflow-x: hidden !important;
+        position: relative;
+    }
+
+    * {
+        overscroll-behavior-x: none;
+    }
+}
+
+/* Specific fix for iPad */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    html,
+    body {
+        touch-action: pan-y pinch-zoom;
+        overscroll-behavior-x: none;
+    }
+}

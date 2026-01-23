@@ -1,0 +1,196 @@
+.skillsContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    color: #1C1D20;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.stickyHeader {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+
+    h2 {
+        font-size: 4rem;
+        font-weight: 400;
+        text-align: center;
+        margin: 0;
+        text-transform: uppercase;
+        color: #1C1D20;
+        will-change: transform, opacity;
+    }
+}
+
+.cardContainer {
+    position: relative;
+    width: 85%;
+    display: flex;
+    perspective: 1000px;
+    transform: translateY(30px);
+    will-change: width;
+    gap: 0;
+}
+
+.card {
+    position: relative;
+    flex: 1;
+    aspect-ratio: 5/7;
+    transform-style: preserve-3d;
+    transform-origin: top center;
+    will-change: transform;
+}
+
+.card1 {
+    border-radius: 20px 0 0 20px;
+}
+
+.card4 {
+    border-radius: 0 20px 20px 0;
+}
+
+.cardFront,
+.cardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: inherit;
+    overflow: hidden;
+}
+
+.cardFront {
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.cardBack {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: rotateY(180deg);
+    padding: 2rem;
+    color: white;
+}
+
+.cardNumber {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 1rem;
+    opacity: 0.5;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    h3 {
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    p {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        line-height: 1.4;
+        max-width: 90%;
+    }
+}
+
+.tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 0.5rem;
+
+    .tool {
+        padding: 6px 14px;
+        border-radius: 50px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Responsive - disable animation on mobile */
+@media (max-width: 999px) {
+    .skillsContainer {
+        height: auto;
+        padding: 4rem 2rem;
+    }
+
+    .stickyHeader {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        margin-bottom: 3rem;
+
+        h2 {
+            font-size: 2.5rem;
+            opacity: 1 !important;
+            transform: none !important;
+        }
+    }
+
+    .cardContainer {
+        width: 100%;
+        flex-direction: column;
+        gap: 2rem;
+        transform: none;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        border-radius: 20px !important;
+        transform: none !important;
+    }
+
+    .cardFront {
+        display: none;
+    }
+
+    .cardBack {
+        position: relative;
+        transform: none !important;
+        padding: 2rem;
+        min-height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .stickyHeader h2 {
+        font-size: 2rem;
+    }
+
+    .cardContent h3 {
+        font-size: 1.2rem;
+    }
+
+    .cardContent p {
+        font-size: 0.85rem;
+    }
+}

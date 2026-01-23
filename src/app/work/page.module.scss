@@ -1,0 +1,211 @@
+.work {
+  min-height: 100vh;
+  background-color: #fff;
+
+  .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #1C1D20;
+    position: relative;
+    overflow: hidden;
+
+    .heroContent {
+      width: 100%;
+      max-width: 1400px;
+      padding: 0 50px;
+      position: relative;
+      z-index: 3;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%;
+      padding-bottom: 100px;
+
+      h1 {
+        font-size: clamp(4rem, 10vw, 12rem);
+        font-weight: 400;
+        margin: 0 0 20px 0;
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+
+      p {
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+        font-weight: 300;
+        line-height: 1.5;
+        opacity: 0.7;
+        margin: 0;
+        max-width: 600px;
+      }
+    }
+  }
+
+  .projectsSection {
+    padding: 100px 50px 550px 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    .projectsContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      width: 100%;
+    }
+
+    .row {
+      display: flex;
+      width: 100%;
+      gap: 3rem;
+    }
+
+    .workItem {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .projectLink {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-decoration: none;
+      color: inherit;
+      width: 100%;
+      height: 100%;
+
+      &:hover {
+        .projectImage {
+          img {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+
+    .projectImage {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      border-radius: 20px;
+      background: #f0f0f0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: transform 0.5s ease-in-out;
+      }
+    }
+
+    .projectInfo {
+      .projectHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h3 {
+          font-size: 1.5rem;
+          font-weight: 400;
+          margin: 0;
+          color: #1C1D20;
+        }
+
+        .year {
+          color: #999;
+          font-size: 0.9rem;
+        }
+      }
+
+      .category {
+        font-size: 1rem;
+        color: #999;
+        margin: 0.5rem 0 0 0;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .cta {
+    background: #f5f5f5;
+    color: #1C1D20;
+    padding: 150px 50px;
+    text-align: center;
+
+    .ctaContent {
+      max-width: 800px;
+      margin: 0 auto;
+
+      h2 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 300;
+        margin: 0 0 20px 0;
+        line-height: 1.2;
+      }
+
+      p {
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin: 0 0 50px 0;
+        opacity: 0.8;
+      }
+
+      .ctaButton {
+        p {
+          margin: 0;
+          font-size: 1.1rem;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .work {
+    .hero {
+      .heroContent {
+        h1 {
+          font-size: 3rem;
+        }
+
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .projectsSection {
+      padding: 50px 20px 550px 20px;
+
+      .projectsContainer,
+      .row {
+        gap: 60px;
+      }
+
+      .row {
+        flex-direction: column;
+      }
+    }
+
+    .cta {
+      padding: 100px 20px;
+
+      .ctaContent {
+        h2 {
+          font-size: 2.5rem;
+        }
+
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}

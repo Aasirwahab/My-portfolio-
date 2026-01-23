@@ -1,0 +1,154 @@
+.contact {
+  background-color: #141516;
+  min-height: 100vh;
+  color: white;
+  padding: 150px 100px;
+  padding: 150px 100px;
+  // overflow: hidden; - Removed to ensure scrolling works if content overflows
+
+  @media (max-width: 1024px) {
+    padding: 100px 40px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 80px 20px;
+  }
+
+  .header {
+    margin-bottom: 100px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 50px;
+
+    h1 {
+      font-size: 8vw;
+      text-transform: uppercase;
+      line-height: 1;
+      margin: 0;
+      font-weight: 400;
+    }
+  }
+
+  .content {
+    display: flex;
+    gap: 100px;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .details {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+
+      .item {
+        h3 {
+          color: #888;
+          text-transform: uppercase;
+          font-size: 0.9rem;
+          margin-bottom: 15px;
+          letter-spacing: 1px;
+        }
+
+        p {
+          font-size: 2rem;
+          margin: 0;
+          font-weight: 300;
+
+          @media (max-width: 768px) {
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      .socials {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        a {
+          font-size: 1.5rem;
+          text-decoration: none;
+          color: white;
+          transition: color 0.3s;
+          cursor: pointer;
+
+          &:hover {
+            color: #334BD3;
+          }
+        }
+      }
+    }
+
+    .formContainer {
+      flex: 2;
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        .row {
+          display: flex;
+          gap: 40px;
+
+          @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 50px;
+          }
+
+          .field {
+            flex: 1;
+          }
+        }
+
+        .field {
+          position: relative;
+
+          label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 1.5rem;
+            color: #888;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            transform-origin: left top;
+          }
+
+          input,
+          textarea {
+            width: 100%;
+            background: none;
+            border: none;
+            border-bottom: 1px solid #555;
+            padding: 10px 0;
+            color: white;
+            font-size: 1.5rem;
+            outline: none;
+            resize: none;
+            transition: border-color 0.3s;
+
+            &:focus {
+              border-color: #334BD3;
+            }
+
+            &:focus+label,
+            &:not(:placeholder-shown)+label {
+              transform: translateY(-25px) scale(0.7);
+              color: #334BD3;
+            }
+          }
+        }
+
+        .submit {
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+}
